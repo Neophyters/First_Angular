@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <div class="container"> 
   <form>  
     <div class="form-group">  
@@ -10,4 +11,24 @@
       </div>  
     </div> 
   </form>
+=======
+<div [formGroup]="todoForm" >
+  <div class="container"> 
+    <form>  
+      <div class="form-group">  
+        <h1 class="text-center text-primary">Todo App</h1>   
+        <div class="input-group-prepend">       
+          <input type="text" class="form-control" placeholder="Add Todo" formControlName="todo">  
+          <button class="input-group-text" (click)="getToDoValue()">Add</button>   
+          <button class="button" (click)="resetToDoList()">Reset Button</button>
+        </div>  
+        <div class="form-group">
+          <ul>
+            <li *ngFor="let item of todoList">{{ item }}</li>
+          </ul>
+        </div>
+      </div> 
+    </form>
+  </div>
+>>>>>>> Stashed changes
 </div>
