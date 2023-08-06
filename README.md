@@ -12,6 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Putting up a PR
 - Commit + test code `git add . && git commit -m "<message>"`
+- Push `git push -u origin <current_branch>`
 - Go to Github -> Pull Requests `main <-- <your-working-branch>`
 - Add Rohan as code reviewers
 
