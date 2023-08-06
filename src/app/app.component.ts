@@ -21,7 +21,6 @@ export class AppComponent {
 
   getToDoValue() {
     this.todoList.push(this.todoForm.get('todo')?.value);
-    console.log(this.todoForm.get('todo'));
     this.todoForm.get('todo')?.setValue(null);
   }
 
