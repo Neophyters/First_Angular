@@ -19,6 +19,34 @@ form {
     font-size: 16px;
   }
 
+.button1 {
+  background-color: lightcoral; /* Green */
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.checkbox {
+  width: 1.3em;
+  height: 1.3em;
+  background-color: red;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.checkbox:checked {
+  background-color: green;
+}
+
   .button_Jason {
     background-color: red; /* Green */
     border: none;

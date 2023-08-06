@@ -12,11 +12,14 @@ export class AppComponent {
   todoList: number[] = [];
   todoPrint: boolean = false;
 
+  isChecked: boolean = false;
+
   constructor(private formBuilder: FormBuilder) {
     this.todoForm = this.formBuilder.group({
       todo: ['', Validators.required],
-    });
+    });    
   }
+  
   title = 'todo-app';
 
   getToDoValue() {
@@ -32,7 +35,14 @@ export class AppComponent {
     this.todoList = [];
   }
 
-
-
-
+  checkBoxClicked() {
+    if (this.isChecked == true) {
+      this.isChecked = false;
+      document.getElementById("todolist")!.style.display = "none";
+    }
+    else {
+      this.isChecked = true;
+      document.getElementById("todolist")!.style.display = "block";
+    }
+  }
 }
