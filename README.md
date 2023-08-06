@@ -17,7 +17,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Basic Commands
 - Adding to commit `git add . && git commit -m "<message>"`
-- Viewing Git history `git log --oneline --graph`
+- Viewing Git history `git log --oneline --graph --all`
 
 ## Development server
 
