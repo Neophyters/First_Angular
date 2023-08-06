@@ -19,6 +19,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # Basic Commands
 - Adding to commit `git add . && git commit -m "<message>"`
 - Viewing Git history `git log --oneline --graph --all`
+- Create a Remote Tracking Branch `git branch --track <branch-name> origin/<branch-name>`
 
 ## Development server
 
