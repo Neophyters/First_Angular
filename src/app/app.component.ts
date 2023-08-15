@@ -17,6 +17,7 @@ export class AppComponent {
   constructor(private formBuilder: FormBuilder) {
     this.todoForm = this.formBuilder.group({
       todo: ['', Validators.required],
+      showTodoList: [false],
     });    
   }
   
@@ -25,6 +26,7 @@ export class AppComponent {
   getToDoValue() {
     this.todoList.push(this.todoForm.get('todo')?.value);
     this.todoForm.get('todo')?.setValue(null);
+    console.log(this.todoForm.get('showTodoList')?.value);
   }
 
   printToDoValue() {

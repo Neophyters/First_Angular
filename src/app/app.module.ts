@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CheckboxModule } from 'primeng/checkbox';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { CheckboxModule } from 'primeng/checkbox';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    CheckboxModule
+    CheckboxModule,
+    BrowserAnimationsModule, 
+    MatCheckboxModule
   ],
 
   providers: [],
   
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
