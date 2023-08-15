@@ -8,9 +8,9 @@ FROM node:18-alpine
 WORKDIR /app
 COPY package.json package-lock.json /app/
 RUN npm install
-
-# Add App Source Files
-COPY . /app
+RUN apk update &&\ 
+    apk upgrade &&\
+    apk add curl
 
 # Expose Localhost Port
 EXPOSE 4200
