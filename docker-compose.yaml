@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  todo-app:
+    build: .                  # Builds Images from Dockerfile
+    image: todo-app
+    ports:
+      - '4200:4200'
+    depends_on:
+      - mongodb
+    volumes:
+      - .:/app
+    networks:
+      - node-network
+
+  mongodb:
+    image: mongo:6-jammy
+    ports:
+      - '27017:27017'
+      - '28017:28017'
+    volumes:
+      - dbdata6:/data/db
+    networks:
+      - node-network
+
+volumes:
+  dbdata6:
+
+networks:
+  node-network:
+    driver: bridge
