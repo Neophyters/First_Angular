@@ -2,6 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
 
+# Docker:
+## Info
+- Images: Dockerfile: `docker build -t <image-name>:<tag> .`
+- Containers: Small VMs that are made from images: `docker run hello-world`
+- Volumes: Hard drive for containers: `docker volume list`
+## Installing
+- First, install docker engine `sudo apt-get install docker.io -y`
+- Second, install docker-compose `sudo apt-get install docker-compose -y`
+- Third, install curl for debugging and testing `sudo apt-get install curl -y`
+- Finally, install python for test server `sudo apt-get install python3 -y`
+## Workflow
+- Info:
+  - Root of the project is bind mounted in the docker container, which means that local changes are reflected in the container.
+  - The web app will show up on `localhost:4200`
+  - MongoDB shows up on `mongodb://localhost:27017/`
+- Docker Compose:
+  - Type in terminal: `docker-compose up`
+  - If there are changes to the dependencies you need to rebuild: `docker-compose build todo-app`
+
 # Git: 
 # Workflow
 - Before working `git fetch --prune`
