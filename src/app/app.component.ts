@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UserLoginComponent } from './user-login/user-login.component';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class AppComponent {
   todoForm: FormGroup;
-
+  displayLogin: boolean = false;
   todoList: number[] = [];
   todoPrint: boolean = false;
 
@@ -23,6 +24,12 @@ export class AppComponent {
   
   title = 'todo-app';
 
+  openUserLogin() {
+    console.log("I'm here");
+    this.displayLogin = true;
+    console.log("I'm done");
+  }
+  
   getToDoValue() {
     this.todoList.push(this.todoForm.get('todo')?.value);
     this.todoForm.get('todo')?.setValue(null);
