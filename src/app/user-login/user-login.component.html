@@ -1,16 +1,13 @@
-<form>
+<div class="user-login-container">
+    <h2>Register</h2>
     <div class="form-group">
-    <h2>User please login here</h2>
-    <div class="form-group col-md-6">
         <label>User ID: </label>
-        <input type="text+" class="form-control" placeholder="User ID">
+        <input type="text" class="input-group-text" style="text-align: left" placeholder="User ID">
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group">
         <label>Password: </label>
-        <input type="password" class="form-control">
+        <input type="password" class="input-group-text" style="text-align: left" placeholder="Password">
     </div>
-
-    <button class="input-group-text" (click)="login()">Submit</button>
-    </div>
-</form>
+    <button mat-flat-button color="primary" (click)="login()">Submit</button>
+</div>
 
