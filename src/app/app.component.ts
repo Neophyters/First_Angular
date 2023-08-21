@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CalendarEvent, CalendarView } from 'angular-calendar';
+import { startOfDay, addDays } from 'date-fns';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  title = 'todo-app';
   todoForm: FormGroup;
-
+  
   todoList: number[] = [];
-  todoPrint: boolean = false;
-
-  isChecked: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {
     this.todoForm = this.formBuilder.group({
@@ -21,30 +21,16 @@ export class AppComponent {
     });    
   }
   
-  title = 'todo-app';
+  
 
   getToDoValue() {
     this.todoList.push(this.todoForm.get('todo')?.value);
     this.todoForm.get('todo')?.setValue(null);
-    console.log(this.todoForm.get('showTodoList')?.value);
+    console.log(this.todoForm.get('listCalendar')?.value);
   }
-
-  printToDoValue() {
-    this.todoPrint = !this.todoPrint;
-  } 
 
   resetToDoList() {
     this.todoList = [];
   }
 
-  checkBoxClicked() {
-    if (this.isChecked == true) {
-      this.isChecked = false;
-      document.getElementById("todolist")!.style.display = "none";
-    }
-    else {
-      this.isChecked = true;
-      document.getElementById("todolist")!.style.display = "block";
-    }
-  }
 }
