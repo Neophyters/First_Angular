@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog'
 import { UserLoginComponent } from './user-login/user-login.component';
 
 @Component({
@@ -10,20 +11,20 @@ import { UserLoginComponent } from './user-login/user-login.component';
 export class AppComponent {
   title = 'todo-app';
   todoForm: FormGroup;
-  
   displayLogin: boolean = false;
-  todoList: number[] = [];
+  todoList: number[] = [];  
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private dialog: MatDialog) {
     this.todoForm = this.formBuilder.group({
       todo: ['', Validators.required],
       showTodoList: [false],
       listDate: [''],
     });    
   }
+
  
   openUserLogin() {
-    this.displayLogin = !this.displayLogin;
+    this.dialog.open(UserLoginComponent);
   }
   
   getToDoValue() {

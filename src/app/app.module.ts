@@ -10,6 +10,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
     MatNativeDateModule,
     MatFormFieldModule,
     MatButtonModule,
+    MatDialogModule,
   ],
 
   providers: [],
