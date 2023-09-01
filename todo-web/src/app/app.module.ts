@@ -11,11 +11,12 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { UserLoginComponent } from './user-login/user-login.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserLoginComponent
+    UserLoginComponent,
   ],
 
   imports: [
@@ -29,6 +30,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatFormFieldModule,
     MatButtonModule,
     MatDialogModule,
+    HttpClientModule,
+
   ],
 
   providers: [],
