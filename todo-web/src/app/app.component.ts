@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog'
 import { UserLoginComponent } from './user-login/user-login.component';
+import { LoginService } from './service/login.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,10 @@ export class AppComponent {
   displayLogin: boolean = false;
   todoList: number[] = [];  
 
-  constructor(private formBuilder: FormBuilder, private dialog: MatDialog) {
+  constructor(
+    private loginService: LoginService,
+    private dialog: MatDialog,
+    private formBuilder: FormBuilder) {
     this.todoForm = this.formBuilder.group({
       todo: ['', Validators.required],
       showTodoList: [false],
