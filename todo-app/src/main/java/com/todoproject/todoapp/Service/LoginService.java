@@ -15,5 +15,13 @@ public class LoginService {
     public void saveUser(User user) {
         loginRepository.save(user);
     }
+
+    public boolean checkUsername(String username) {
+        if (loginRepository.findByUsername(username) == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
     
 }

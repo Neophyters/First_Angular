@@ -34,7 +34,7 @@ export class UserLoginComponent {
     this.loginService.createUser(this.user).subscribe(
       response => {
       console.log(response);
+      window.alert(response.message);
     });
-    window.alert("You are logged in!");
   }
 }

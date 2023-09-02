@@ -20,9 +20,12 @@ public class LoginController {
 
     @PostMapping("/api/register")
     public ResponseEntity<String> registerUser(@RequestBody User user) {
-        
-        loginService.saveUser(user);
-
-        return ResponseEntity.ok("{\"message\": \"The user has registered successfully\"}");
+        if (loginService.checkUsername(user.getUsername()) == false) {
+            loginService.saveUser(user);
+            return ResponseEntity.ok("{\"message\": \"The user has registered successfully! GOOD JOB MATE!\"}");
+        } else {
+            return ResponseEntity.ok("{\"message\": \"This Username Already Exists. Please Enter a Different Username\"}");
+        }
     }
+
 }

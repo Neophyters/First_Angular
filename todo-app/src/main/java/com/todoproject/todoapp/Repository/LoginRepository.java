@@ -8,4 +8,5 @@ import com.todoproject.todoapp.Model.User;
 
 public interface LoginRepository extends MongoRepository <User, String> {
     User findByUsername(String username);
+    
 }
