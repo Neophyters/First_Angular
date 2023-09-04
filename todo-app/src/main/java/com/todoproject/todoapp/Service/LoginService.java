@@ -16,10 +16,19 @@ public class LoginService {
         loginRepository.save(user);
     }
 
-    public boolean checkUsername(String username) {
+    public boolean isUsernameExist(String username) {
         if (loginRepository.findByUsername(username) == null) {
             return false;
         } else {
+            return true;
+        }
+    }
+
+    public boolean isPasswordExist(String username, String password) {
+        User user = loginRepository.findByUsername(username);
+        if (user==null || !user.getPassword().equals(password)) {
+            return false;
+        } else {   
             return true;
         }
     }
